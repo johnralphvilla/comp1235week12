@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> project script </title>
+<!-- Type script is a subset  of js plus extra features-->
+    <script src="https://cdn.jsdelivr.net/npm/typescript@5.3.3"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/text-typescript@1.3.0"></script>
+    <script type="text/typescript">
+        // defining text
+         //is a subet of js having extra featurs
+
+function add(a: number, b: number) {
+    return a + b;
+}
+console.log(add(5, 10));
+// console.log(add("5", 10));
+
+interface Walker {
+    readonly age: number;
+    do_walk(age: number, jaunt?: boolean): string;
+}
+
+// keyword implements (interface)
+class Person implements Walker {
+    readonly age: number;
+
+    constructor(age: number) {
+        this.age = age;
+    }
+
+    do_walk(age: number, jaunt?: boolean): string {
+        if (jaunt) {
+            return "Walking for fun";
+        }
+        return "Walking normal";
+    }
+}
+
+const p1: Person = new Person(25);
+console.log(p1);
+console.log(p1.do_walk(25, true));
+
+
+class Mammal {
+    public height: number;
+    protected dinner: string;
+    private pocket_money: number;
+
+    constructor(m_height: number, m_dinner: string, m_money: number) {
+        this.height = m_height;
+        this.dinner = m_dinner;
+        this.pocket_money = m_money;
+    }
+}
+
+const m1: Mammal = new Mammal(6, "Sugar Cane", 20);
+
+console.log("Mammal", m1);// inside access sable
+console.log("height",m1.height);// Public accessible
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
